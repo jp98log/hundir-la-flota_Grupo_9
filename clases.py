@@ -39,3 +39,11 @@ class Tablero:
     def mostrar(self):
         """Imprime el tablero por pantalla."""
         print(self.tablero)
+
+    def colocar_barcos(self):
+        """Coloca un barco en el tablero."""
+        longitud = 4
+        fila = 2
+        columna = 3
+        self.tablero[fila, columna:columna + longitud] = BARCO
+    
