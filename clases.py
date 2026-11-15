@@ -1,4 +1,5 @@
 import numpy as np
+import random
 from variables import TAMANO_TABLERO, BARCOS, AGUA, BARCO, TOCADO, AGUA_DISPARADA
 
 class Tablero:
@@ -43,7 +44,10 @@ class Tablero:
     def colocar_barcos(self):
         """Coloca un barco en el tablero."""
         longitud = 4
-        fila = 2
-        columna = 3
+        fila = random.randint(0, self.tamano - 1)
+        columna = random.randint(0, self.tamano - longitud)
         self.tablero[fila, columna:columna + longitud] = BARCO
+
+    
+
     
