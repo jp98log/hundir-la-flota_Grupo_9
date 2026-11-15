@@ -35,6 +35,8 @@ def main():
 
         if turno_jugador:
             print("\n--- TU TURNO ---")
+            print("Tu tablero:")
+            tablero_jugador.mostrar()
             print("Tablero de disparos al enemigo:")
             tablero_maquina.mostrar(ocultar_barcos=True)
 
