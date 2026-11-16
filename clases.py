@@ -86,11 +86,17 @@ class Tablero:
 
     def mostrar(self, ocultar_barcos=False):    # Muestra el tablero completo
         """
-        Imprime el tablero por pantalla.
+        Imprime el tablero por pantalla con numeración de filas y columnas.
         Args:
             ocultar_barcos (bool): Si es True, no se ven los barcos, solo los disparos.
         """
-        if ocultar_barcos:
-            print(self.disparos)    # Imprime solo los disparos, sin revelar dónde están los barcos
-        else:
-            print(self.tablero) # Imprime mis barcos y los disparos recibidos   
+        # Seleccionamos qué matriz imprimir
+        matriz = self.disparos if ocultar_barcos else self.tablero
+        
+        # Imprimir la cabecera con los números de las columnas (0 al 9)
+        print("   " + " ".join([str(i) for i in range(self.tamano)]))
+        
+        # Imprimir cada fila con su número de índice a la izquierda
+        for i, fila in enumerate(matriz):
+            print(f"{i}  " + " ".join(fila))
+  
