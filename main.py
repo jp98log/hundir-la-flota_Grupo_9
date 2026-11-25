@@ -52,6 +52,9 @@ def main():
             elif resultado == "repetido":
                 print("Ya habías disparado ahí. Prueba otra vez.")
                 continue
+            
+            print("\nTablero de disparos al enemigo actualizado:")
+            tablero_maquina.mostrar(ocultar_barcos=True) #Correcion: Mostrar el tablero de disparos actualizado después del disparo
 
             # Comprobar si el jugador ha ganado
             if not quedan_barcos(tablero_maquina):
